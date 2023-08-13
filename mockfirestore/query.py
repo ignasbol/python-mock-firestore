@@ -50,7 +50,7 @@ class Query:
         if self._limit:
             doc_snapshots = islice(doc_snapshots, self._limit)
 
-        return iter(doc_snapshots)
+        return list(doc_snapshots)
 
     def get(self) -> Iterator[DocumentSnapshot]:
         warnings.warn('Query.get is deprecated, please use Query.stream',
